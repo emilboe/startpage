@@ -52,7 +52,6 @@ section {
   background: rgb(60, 60, 60);
   box-shadow: -2px 2px 10px black;
 }
-
 .stipled {
   --border-width: 3px;
   width: 300px;
@@ -60,6 +59,7 @@ section {
   position: relative;
   border-radius: var(--border-width);
   z-index: 1;
+  background: rgba(0, 0, 0, 0);
 }
 .stipledcover {
   width: 300px;
@@ -67,14 +67,13 @@ section {
   position: relative;
   display: flex;
   justify-content: center;
-  background: rgb(20, 20, 20);
+  /* background: rgb(20, 20, 20); */
   align-items: center;
   color: white;
   border-radius: var(--border-width);
   z-index: 1;
 }
-
-.stipled::after {
+.stipled::before {
   z-index: -1;
   position: absolute;
   content: "";
@@ -82,7 +81,6 @@ section {
   left: calc(-1 * var(--border-width));
   width: calc(100% + var(--border-width) * 2);
   height: calc(100% + var(--border-width) * 2);
-
   background-image: repeating-linear-gradient(45deg,
       rgba(255, 255, 255, 1) 0%,
       rgba(255, 255, 255, 1) 5%,
@@ -92,6 +90,11 @@ section {
   background-position: 0 50%;
   border-radius: calc(2 * var(--border-width));
   animation: moveGradient 4s infinite linear;
+  clip-path: polygon(
+    0% 0%, 100% 0%, 100% 100%, 0% 100%, /* Outer edge of the mask */
+    0% 98%, 0% 0%, 2% 2%, 2% 98%, 98% 98%, 98% 2%, 2% 2%  /* Inner edge of the mask */
+);
+
 }
 
 @keyframes moveGradient {
