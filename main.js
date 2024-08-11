@@ -1,6 +1,3 @@
-
-console.log(weaterApiKey)
-
 function getWeekNumber(d) {
     // Copy date so don't modify original
     d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
@@ -79,13 +76,23 @@ document.getElementById('EUweek').innerHTML = 'Week ' + week[1];
 document.getElementById('OCEweek').innerHTML = 'Week ' + OCEweek[1];
 
 // weather api
+// melbourne weather
 fetch('https://api.openweathermap.org/data/2.5/weather?q=Keysborough,AU&appid=' + weaterApiKey + '&units=metric')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    document.getElementById('OCEweather').innerHTML = `${data.weather[0].description} ${Math.round(data.main.temp)}°C`;
-  })
-  .catch(error => console.error('Error fetching weather data:', error));
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        document.getElementById('OCEweather').innerHTML = `${data.weather[0].description} ${Math.round(data.main.temp)}°C`;
+    })
+    .catch(error => console.error('Error fetching weather data:', error));
+
+// trondheim weather
+fetch('https://api.openweathermap.org/data/2.5/weather?q=Trondheim,NO&appid=' + weaterApiKey + '&units=metric')
+    .then(response => response.json())
+    .then(data => {
+        //console.log(data);
+        document.getElementById('EUweather').innerHTML = `${data.weather[0].description} ${Math.round(data.main.temp)}°C`;
+    })
+    .catch(error => console.error('Error fetching weather data:', error));
 
 
 // noise generated
@@ -95,15 +102,15 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 function drawNoise() {
-  ctx.fillStyle = 'rgba(20, 20, 21, 0.3)';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  for (let i = 0; i < 200; i++) {
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
-    //ctx.fillStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.3)`;
-    ctx.beginPath();
-    ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 2, 0, 2 * Math.PI);
-    ctx.fill();
-  }
-  requestAnimationFrame(drawNoise);
+    ctx.fillStyle = 'rgba(20, 20, 21, 0.3)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < 200; i++) {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+        //ctx.fillStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.3)`;
+        ctx.beginPath();
+        ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 2, 0, 2 * Math.PI);
+        ctx.fill();
+    }
+    requestAnimationFrame(drawNoise);
 }
 drawNoise();
