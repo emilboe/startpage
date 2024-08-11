@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World</title>
+  <link href='/style.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="container">
+
+    <section id="time">
+      <h1 id="OCEclock"></h1>
+      <h1 id="OCEdate"></h1>
+      <h2 id="OCEweek"></h2>
+    </section>
+
+    <section>
+      🤍
+    </section>
+
+    <section>
+      <h1 id="EUclock"></h1>
+      <h1 id="EUdate"></h1>
+      <h2 id="EUweek"></h2>
+    </section>
+
+    <section>
+      <p id="OCEweather"> wao</p>
+    </section>
+
+    <section id="main">
+      <script>
+        var websites = [
+          "www.instagram.com",
+          "IG",
+          "www.twitter.com",
+          "X",
+          "www.anilist.com",
+          "AL",
+          "www.youtube.com",
+          "YT",
+          "www.tumblr.com",
+          "T",
+          "www.gmail.com",
+          "gmail"
+        ]
+        for (i = 0; i < 12; i += 2) {
+          document.getElementById('main').innerHTML +=
+            '<a class="card" href=' + websites[i] + '>' + websites[i + 1] + '</div>'
+        }
+      </script>
+    </section>
+
+  </div>
+  <script defer type="text/javascript" src="/api.js"></script>
+  <script defer type="text/javascript" src="/main.js"></script>
+
+  <canvas id="noiseCanvas" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
+  <script>
+
+  </script>
+</body>
+
+</html>
