@@ -4,30 +4,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>bnuy</title>
+  <link href='style.css' rel='stylesheet'>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
   <div class="container">
 
-    <section id="time">
-      <h1 id="OCEclock"></h1>
-      <h1 id="OCEdate"></h1>
-      <h2 id="OCEweek"></h2>
-      
-      <h3 id="OCEweather"> wao</h3>
+    <section class="info">
+      <h1 id='OCEclock' class="clock"></h1>
+      <h4 class="metadata">
+        <span id="OCEdate"></span>
+        |
+        <span id="OCEday"></span>
+        |
+        <a href="https://openweathermap.org/city/2161532" id="OCEweather">wao</a>
+      </h4>
     </section>
 
     <section>
       🤍
     </section>
 
-    <section>
-      <h1 id="EUclock"></h1>
-      <h1 id="EUdate"></h1>
-      <h2 id="EUweek"></h2>
-      <h3 id="EUweather"> wao</h3>
+    <section class="info">
+      <h1 id='EUclock' class="clock">00:00</h1>
+      <h4 class="metadata">
+        <span id="EUdate">date now</span>
+        |
+        <span id="EUday">today</span>
+        |
+        <a href="https://openweathermap.org/city/3133880" id="EUweather">weather here + temp</a>
+      </h4>
     </section>
 
     <section>
@@ -37,31 +46,37 @@
       <script>
         var websites = [
           "www.instagram.com",
-          "IG",
+          "fa-brands fa-instagram",
           "www.twitter.com",
-          "X",
-          "www.anilist.com",
-          "AL",
+          "fa-brands fa-twitter",
+          "www.chat.com",
+          "fa-solid fa-poo",
           "www.youtube.com",
-          "YT",
+          "fa-brands fa-youtube",
           "www.tumblr.com",
-          "T",
+          "fa-brands fa-tumblr",
           "www.gmail.com",
-          "gmail"
+          "fa-brands fa-google"
         ]
         for (i = 0; i < 12; i += 2) {
           document.getElementById('main').innerHTML +=
-            '<a class="card" href=' + websites[i] + '>' + websites[i + 1] + '</div>'
+            '<a class="card" href=https://' + websites[i] + '>' +
+            '<i class="' + websites[i + 1] + ' icon"></i>' +
+            // websites[i + 1] + 
+            '</a>'
         }
       </script>
     </section>
 
   </div>
   <div class="stipled">
-    <div class="stipledcover">ogai</div>
+    <div class="stipledcover">
+      <!-- <img src="https://pbs.twimg.com/media/Gg79g9dbIAExnnn?format=jpg" width="300px" height="199px" /> -->
+      wadaeo
+    </div>
   </div>
-  <script defer type="text/javascript" src="/api.js"></script>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <script defer type="text/javascript" src="api.js"></script>
+  <script defer type="text/javascript" src="main.js"></script>
 
   <canvas id="noiseCanvas" style="position: fixed; top: 0; left: 0; z-index: -1;"></canvas>
   <script>

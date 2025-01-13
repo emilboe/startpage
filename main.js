@@ -72,8 +72,10 @@ var OCEdate = dateString("OCE");
 
 document.getElementById('EUdate').innerHTML = `${EUdate.month} ${EUdate.dayNum}`
 document.getElementById('OCEdate').innerHTML = `${OCEdate.month} ${OCEdate.dayNum}`
-document.getElementById('EUweek').innerHTML = 'Week ' + week[1];
-document.getElementById('OCEweek').innerHTML = 'Week ' + OCEweek[1];
+// document.getElementById('EUweek').innerHTML = 'Week ' + week[1];
+// document.getElementById('OCEweek').innerHTML = 'Week ' + OCEweek[1];
+document.getElementById('OCEday').innerHTML = `${OCEdate.day}`
+document.getElementById('EUday').innerHTML = `${EUdate.day}`
 
 // weather api
 // melbourne weather
@@ -102,10 +104,10 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 function drawNoise() {
-    ctx.fillStyle = 'rgba(20, 20, 21, 0.3)';
+    ctx.fillStyle = 'rgba(20, 20, 21, 0.15)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     for (let i = 0; i < 200; i++) {
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.10)';
         //ctx.fillStyle = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.3)`;
         ctx.beginPath();
         ctx.arc(Math.random() * canvas.width, Math.random() * canvas.height, Math.random() * 2, 0, 2 * Math.PI);
@@ -113,4 +115,4 @@ function drawNoise() {
     }
     requestAnimationFrame(drawNoise);
 }
-drawNoise();
+//  drawNoise();

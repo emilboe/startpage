@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900');
+
 body {
-  background: rgb(20, 20, 20);
+  background-image: url(https://wallhalla.com/wallpaper/46/variant/preview/xl);
+  /* https://wallhalla.com/wallpaper/85/variant/preview/xl 
+  
+  https://wallhalla.com/wallpaper/58/variant/preview/xl
+  */
+  /* background: rgb(20, 20, 20); */
   height: 97vh;
   display: grid;
   color: white;
-  font-family: 'Lato', sans-serif;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
 }
 
 .container {
@@ -36,8 +43,36 @@ section {
     ". . .";
 }
 
+.info {
+  background: rgba(0, 0, 0, 0.32);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  margin: .5em;
+  border-radius: 2px;
+  h1{
+    font-size: 250%;
+  }
+  a{
+    padding: 1em;
+    text-decoration: none;
+    color: inherit;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+.metadata span {
+  margin: 1em;
+}
+
 .card {
-  background: rgb(40, 40, 40);
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.32);
   padding: 2em;
   margin: .5em;
   cursor: pointer;
@@ -49,9 +84,10 @@ section {
 
 .card:hover {
   transform: translate(3%, -3%);
-  background: rgb(60, 60, 60);
-  box-shadow: -2px 2px 10px black;
+  background: rgba(0, 0, 0, 0.42);
+  box-shadow: -2px 2px 10px rgba(0, 0, 0, 0.39);
 }
+
 .stipled {
   --border-width: 3px;
   width: 300px;
@@ -60,7 +96,9 @@ section {
   border-radius: var(--border-width);
   z-index: 1;
   background: rgba(0, 0, 0, 0);
+  margin: auto;
 }
+
 .stipledcover {
   width: 300px;
   height: 200px;
@@ -73,6 +111,7 @@ section {
   border-radius: var(--border-width);
   z-index: 1;
 }
+
 .stipled::before {
   z-index: -1;
   position: absolute;
@@ -90,10 +129,11 @@ section {
   background-position: 0 50%;
   border-radius: calc(2 * var(--border-width));
   animation: moveGradient 4s infinite linear;
-  clip-path: polygon(
-    0% 0%, 100% 0%, 100% 100%, 0% 100%, /* Outer edge of the mask */
-    0% 98%, 0% 0%, 2% 2%, 2% 98%, 98% 98%, 98% 2%, 2% 2%  /* Inner edge of the mask */
-);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%,
+      /* Outer edge of the mask */
+      0% 98%, 0% 0%, 2% 2%, 2% 98%, 98% 98%, 98% 2%, 2% 2%
+      /* Inner edge of the mask */
+    );
 
 }
 
